@@ -10,11 +10,18 @@ import { doLog } from "./doLog.js";
  * @param {string} num - номер файла в папке
  */
 export const findMockFile = (err, cb, t, num) => {
-  const filePath = path.normalize(
-    `${path.resolve()}/src/mock/${t}/${num}.json`,
+  let filePath;
+  const fileOverriddePath = path.normalize(
+    `${path.resolve()}/src/mock_overrides/downloaded/${t}/${num}.json`,
   );
+  if (fs.existsSync(fileOverriddePath)) {
+    filePath = fileOverriddePath;
+  } else {
+    filePath = path.normalize(`${path.resolve()}/src/mock/${t}/${num}.json`);
+  }
+
   if (!fs.existsSync(filePath)) {
-		doLog(`file not exist ${filePath}`);
+    doLog(`file not exist ${filePath}`);
     return;
   }
   doLog(`Read file ${filePath}`);

@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --env-file=.env src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "loadMocks": "node --env-file=.env src/loadMocks.js",
+    "preinstall": "node src/preinstall.js"
   },
   "author": "Kirill Vanyukov",
   "license": "ISC",
   "dependencies": {
+    "fs-extra": "^11.2.0",
     "ws": "^8.18.0"
   },
   "optionalDependencies": {

@@ -23,19 +23,6 @@ function onConnect(wsClient) {
         return;
       }
       sendMocks(msg => wsClient.send(msg), jsonMessage);
-      // switch (jsonMessage.action) {
-      //   case "ECHO":
-      //     wsClient.send(jsonMessage.data);
-      //     break;
-      //   case "PING":
-      //     setTimeout(function () {
-      //       wsClient.send("PONG");
-      //     }, 2000);
-      //     break;
-      //   default:
-      //     doLog("Неизвестная команда");
-      //     break;
-      // }
     } catch (error) {
       doLog("Ошибка", error);
     }
