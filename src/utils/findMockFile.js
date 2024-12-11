@@ -4,12 +4,13 @@ import { doLog } from "./doLog.js";
 
 /**
  *
- * @param {function} err
- * @param {function} cb
+ * @param {function} err - выпоняется при ошибке чтения файла
+ * @param {function} nf - выпоняется если файл не найден, полечает объект ошибки
+ * @param {function} cb - функция, получает содержимое файла
  * @param {string} t - подписка = папка в моках
  * @param {string} num - номер файла в папке
  */
-export const findMockFile = (err, cb, t, num) => {
+export const findMockFile = (err, nf, cb, t, num) => {
   let filePath;
   const fileOverriddePath = path.normalize(
     `${path.resolve()}/src/mock_overrides/downloaded/${t}/${num}.json`,
@@ -22,15 +23,16 @@ export const findMockFile = (err, cb, t, num) => {
 
   if (!fs.existsSync(filePath)) {
     doLog(`file not exist ${filePath}`);
+    nf && nf();
     return;
   }
   doLog(`Read file ${filePath}`);
-  fs.readFile(filePath, function (error, data) {
+  fs.readFile(filePath, (error, data) => {
     if (error) {
       doLog(`readFile error ${filePath}`, error);
-      err(error);
+      err && err(error);
       return;
     }
-    cb(data.toString());
+    cb && cb(data.toString());
   });
 };

@@ -4,6 +4,7 @@ export const sendMocks = (send, jsonMessage, i) => {
   const num = i || 1;
   findMockFile(
     () => {},
+    () => {},
     text => {
       send(text);
       setTimeout(() => {

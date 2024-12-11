@@ -1,24 +1,21 @@
-import WebSocket from "ws";
 import fs from "fs";
 import fsExtra from "fs-extra";
 import path from "path";
 import { doLog } from "./utils/doLog.js";
 import { findMockOverridesMessages } from "./utils/findMockOverridesMessages.js";
 import { saveMockOverrides } from "./utils/saveMockOverrides.js";
+import { wsConnection } from "./utils/wsConnection.js";
 
-const address = process.env.WS_DOWNLOAD_DONOR;
-if (!address) {
-  doLog(`Заполните адрес подключения WS_DOWNLOAD_DONOR в .env`);
+const ws = wsConnection();
+if (!ws) {
+  process.exit(1);
 }
-const ws = new WebSocket(address);
 
-ws.on("error", doLog);
-
-ws.on("open", function open() {
-  doLog("connected " + address);
+ws.on("open", () => {
+  doLog("connected " + ws.url);
   const messages = findMockOverridesMessages();
   messages.forEach(item => {
-    fs.readFile(item, function (error, data) {
+    fs.readFile(item, (error, data) => {
       if (error) {
         doLog(`readFile error ${item}`, error);
         err(error);
@@ -39,11 +36,7 @@ ws.on("open", function open() {
   });
 });
 
-ws.on("close", function close() {
-  doLog("disconnected");
-});
-
-ws.on("message", function message(data) {
+ws.on("message", data => {
   doLog("get message", JSON.parse(data));
   saveMockOverrides(data);
 });
