@@ -1,0 +1,104 @@
+{
+  "t": 39,
+  "d": {
+    "diff": false,
+    "sports": {
+      "1": {
+        "enSport": "Football",
+        "name": "Футбол",
+        "sortedChampionshipIds": [246217]
+      }
+    },
+    "championships": {
+      "246217": {
+        "sportId": 1,
+        "enChampionship": "England. Premier League",
+        "sportChampionship": "Футбол. Англия. Премьер-лига",
+        "sortedMatchIds": [17622371]
+      }
+    },
+    "matches": {
+      "17622371": {
+        "championshipId": 246217,
+        "bl": 0,
+        "num": 3305,
+        "tv": null,
+        "team1": "Челси",
+        "team2": "Вулверхэмптон",
+        "enTeam1": "Chelsea",
+        "enTeam2": "Wolverhampton",
+        "date": "01/20",
+        "time": "23:00",
+        "info": "",
+        "odds": {
+          "1": { "oddKey": "17622371|4", "odd": "17622371|4", "cf": 1.43 },
+          "2": { "oddKey": "17622371|5", "odd": "17622371|5", "cf": 5.3 },
+          "3": { "oddKey": "17622371|6", "odd": "17622371|6", "cf": 7.25 },
+          "4": { "oddKey": "17622371|7", "odd": "17622371|7", "cf": 1.11 },
+          "5": { "oddKey": "17622371|2", "odd": "17622371|2", "cf": 1.18 },
+          "6": { "oddKey": "17622371|8", "odd": "17622371|8", "cf": 2.95 },
+          "7": {
+            "oddKey": "17622371|9|-1.5",
+            "odd": "17622371|9|-1.5",
+            "cf": 2.1
+          },
+          "8": {
+            "oddKey": "17622371|10|1.5",
+            "odd": "17622371|10|1.5",
+            "cf": 1.78
+          },
+          "9": { "oddKey": "17622371|11|3", "odd": "17622371|11|3", "cf": 2.1 },
+          "10": {
+            "oddKey": "17622371|12|3",
+            "odd": "17622371|12|3",
+            "cf": 1.78
+          }
+        },
+        "oddsCnt": { "sm": 1047, "md": 1044 },
+        "statsMatchesOddsCnt": 438,
+        "htId": 6,
+        "mainLineDescription": { "txt": "Основное время", "st": "md" },
+        "mainLine": [
+          { "bet": 1, "st": "c" },
+          { "bet": 2, "st": "c" },
+          { "bet": 3, "st": "c" },
+          { "bet": 4, "st": "c" },
+          { "bet": 5, "st": "c" },
+          { "bet": 6, "st": "c" },
+          { "txt": "-1.5", "st": "t" },
+          { "bet": 7, "st": "c" },
+          { "txt": "1.5", "st": "t" },
+          { "bet": 8, "st": "c" },
+          { "bet": 9, "st": "c" },
+          { "txt": "3", "st": "t" },
+          { "bet": 10, "st": "c" }
+        ]
+      }
+    },
+    "headTables": {
+      "6": {
+        "mainLineColsVis": [
+          { "i": 3, "v": "md" },
+          { "i": 4, "v": "md" },
+          { "i": 5, "v": "md" }
+        ],
+        "header": [
+          { "txt": "1", "st": "h" },
+          { "txt": "Х", "st": "h" },
+          { "txt": "2", "st": "h" },
+          { "txt": "1Х", "st": "h" },
+          { "txt": "12", "st": "h" },
+          { "txt": "Х2", "st": "h" },
+          { "txt": "Фора", "st": "h" },
+          { "txt": "1", "st": "h" },
+          { "txt": "Фора", "st": "h" },
+          { "txt": "2", "st": "h" },
+          { "txt": "М", "st": "h" },
+          { "txt": "Тотал", "st": "h" },
+          { "txt": "Б", "st": "h" }
+        ]
+      }
+    },
+    "sortedSportIds": [1]
+  }
+}
